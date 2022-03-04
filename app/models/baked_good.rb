@@ -1,3 +1,8 @@
 class BakedGood < ActiveRecord::Base
-  # add association macro here
+  belongs_to :bakery
+
+  def self.ordered_goods
+    self.order(:price).reverse
+  end
+
 end
